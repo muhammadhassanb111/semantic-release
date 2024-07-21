@@ -35,4 +35,4 @@ jobs:
       - name: Run semantic release for Backend
         env:
           GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
-        run: npx semantic-release --config release.config.backend.yml
+        run: npx semantic-release --config release.config.backend
