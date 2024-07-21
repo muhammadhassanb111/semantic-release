@@ -19,13 +19,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
+      - name: List files
+        run: ls -la
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
       
-      - name: Install dependencies
-        run: npm i
+      - name: Clean npm cache and install dependencies
+        run: |
+          npm cache clean --force
+          npm ci
       
       - name: Run semantic release for Backend
         env:
